@@ -1,24 +1,17 @@
 # dependency-monitor
 
 GitHub Action that periodically re-scans your dependencies for security
-issues with [ReversingLabs rl-protect](https://docs.secure.software/) and
-alerts you when something changes.
+issues and alerts you when something changes.
 
 ## Why dependency-monitor?
 
-Advisory-based dependency scanners can only tell you about a package once
-someone has reported it. rl-protect reports the same known vulnerabilities,
-and on top of them ReversingLabs' own analysis of every package: install
-scripts, obfuscation, network calls, tampering, leaked secrets... That covers
-packages nobody has filed an advisory for, and categories advisories don't
-have.
-
-The monitor makes that a standing check rather than a one-off: a package
-that passed yesterday may be flagged tomorrow, as `ua-parser-js` and
-`event-stream` were. Each scheduled re-scan is diffed against a baseline so
-you hear about changes only, malware is split into its own `🚨` issue you
-can page on, and the baseline history shows exactly when a package went
-bad.
+This monitor leverages [Spectra Assure](https://secure.software/)'s
+in-depth package analysis and makes it a standing check rather than a
+one-off: a package that passed yesterday may be flagged tomorrow, as
+`ua-parser-js` and `event-stream` were. Each scheduled re-scan is diffed
+against a baseline so you hear about changes only, malware is split into
+its own `🚨` issue you can page on, and the baseline history shows exactly
+when a package went bad.
 
 ## Quick start
 
