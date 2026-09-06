@@ -5,13 +5,13 @@ issues and alerts you when something changes.
 
 ## Why dependency-monitor?
 
-This monitor leverages [Spectra Assure](https://secure.software/)'s
-in-depth package analysis and makes it a standing check rather than a
-one-off: a package that passed yesterday may be flagged tomorrow, as
-`ua-parser-js` and `event-stream` were. Each scheduled re-scan is diffed
-against a baseline so you hear about changes only, malware is split into
-its own `🚨` issue you can page on, and the baseline history shows exactly
-when a package went bad.
+A package that passed yesterday may be flagged tomorrow, as `ua-parser-js`
+and `event-stream` were. This action turns the in-depth package analysis of
+[Spectra Assure](https://secure.software/) and
+[rl-protect](https://docs.secure.software/community/tools/rl-protect) from a one-off
+check into a standing one. Each scheduled re-scan is diffed against a
+baseline so you hear only about changes, malware gets its own `🚨` issue you
+can page on, and the baseline history shows exactly when a package went bad.
 
 ## Quick start
 
