@@ -10,9 +10,9 @@ behaviour to stay frozen.
 
 ## [4.0.1] - 2026-09-21
 
-Documentation only; the action behaves exactly as in 4.0.0. This is the first
-release published to the GitHub Marketplace, and the README is what the
-listing shows, so it is rewritten to read well there.
+Documentation and naming only; the action behaves exactly as in 4.0.0. This
+is the first release published to the GitHub Marketplace, and the README is
+what the listing shows, so it is rewritten to read well there.
 
 ### Changed
 
@@ -24,6 +24,10 @@ listing shows, so it is rewritten to read well there.
 - Quick start now recommends scanning a lockfile, and points at the
   direct-action form (`uses: kburich/dependency-monitor@v4`) that the
   Marketplace listing's own snippet uses.
+- The action's `name` in `action.yml`, which becomes the Marketplace listing
+  title, is now "Dependency Monitor", matching the repository. It was
+  "Dependency malware & vulnerability monitor (rl-protect)"; the description
+  already says what is scanned and with what.
 
 ## [4.0.0] - 2026-08-30
 
