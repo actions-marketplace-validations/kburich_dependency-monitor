@@ -8,6 +8,23 @@ Consumers pin the floating major tag (`@v4`), which always points at the
 newest release in the `4.x` line. Pin an exact tag (`@v4.0.0`) if you need
 behaviour to stay frozen.
 
+## [4.0.1] - 2026-09-21
+
+Documentation only; the action behaves exactly as in 4.0.0. This is the first
+release published to the GitHub Marketplace, and the README is what the
+listing shows, so it is rewritten to read well there.
+
+### Changed
+
+- The "Why" section is one paragraph, names Spectra Assure Community, and
+  links the rl-protect documentation.
+- Quick start is shorter: the two-issue severity split moves to the Alerting
+  section, and `alert-on-first-run` is mentioned where the first run is
+  described.
+- Quick start now recommends scanning a lockfile, and points at the
+  direct-action form (`uses: kburich/dependency-monitor@v4`) that the
+  Marketplace listing's own snippet uses.
+
 ## [4.0.0] - 2026-08-30
 
 The repository is renamed from `rl-protect-monitor` to `dependency-monitor`,
@@ -447,6 +464,7 @@ Initial release.
 - `alert-on-first-run` for repositories that want the initial backlog
   reported rather than absorbed into the baseline.
 
+[4.0.1]: https://github.com/kburich/dependency-monitor/compare/v4.0.0...v4.0.1
 [4.0.0]: https://github.com/kburich/dependency-monitor/compare/v3.0.0...v4.0.0
 [3.0.0]: https://github.com/kburich/dependency-monitor/compare/v2.0.0...v3.0.0
 [2.0.0]: https://github.com/kburich/dependency-monitor/compare/v1.2.0...v2.0.0

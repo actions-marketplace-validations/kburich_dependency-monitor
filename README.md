@@ -40,9 +40,14 @@ Alerts arrive as GitHub Issues. The first run only records what it finds;
 every run after that alerts on changes. To be alerted on what the first run
 finds too, set `alert-on-first-run: true` under `with:`.
 
-For best results, scan a lockfile. By defaule the action picks one automatically when
-your repo has it, and a lockfile pins what is actually installed, where a
-manifest only names a version range.
+For best results, scan a lockfile. By default the action picks one
+automatically when your repo has it, and a lockfile pins what is actually
+installed, where a manifest only names a version range.
+
+The workflow above is the reusable one, which runs the whole job for you. To
+add your own steps around the scan, call the action directly as a step with
+`uses: kburich/dependency-monitor@v4`, as shown in
+[examples/consumer-action.yml](examples/consumer-action.yml).
 
 ## Alerting
 
