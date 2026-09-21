@@ -1,7 +1,7 @@
 name: Dependency Monitor
 description: >-
-  Periodically re-scans your dependencies for security issues with
-  ReversingLabs rl-protect and alerts you when something changes.
+  Periodically re-scans your dependencies for security issues and alerts
+  you when something changes.
 author: Kresimir Buric
 branding:
   icon: shield
