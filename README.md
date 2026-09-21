@@ -7,11 +7,11 @@ issues and alerts you when something changes.
 
 A package that passed yesterday may be flagged tomorrow, as `ua-parser-js`
 and `event-stream` were. This action turns the in-depth package analysis of
-[Spectra Assure](https://secure.software/) and
+[Spectra Assure Community](https://secure.software/) and
 [rl-protect](https://docs.secure.software/community/tools/rl-protect) from a one-off
-check into a standing one. Each scheduled re-scan is diffed against a
-baseline so you hear only about changes, malware gets its own `🚨` issue you
-can page on, and the baseline history shows exactly when a package went bad.
+check into a standing one. Each scheduled re-scan is compared with the
+previous one, so you are alerted only when something changes, and every
+change is logged, so you can see what was found and when.
 
 ## Quick start
 
@@ -36,13 +36,13 @@ jobs:
       rl-token: ${{ secrets.RL_TOKEN }}
 ```
 
-The first run scans your manifest, records the baseline (no alert), and
-commits it. Subsequent runs alert only on deltas:
+Alerts arrive as GitHub Issues. The first run only records what it finds;
+every run after that alerts on changes. To be alerted on what the first run
+finds too, set `alert-on-first-run: true` under `with:`.
 
-- **Malware / tampering** → a `🚨`-titled issue labeled `dependency-malware`
-  (treat as an incident — the package may already be installed).
-- **Vulnerabilities / secrets / licenses / hardening** → a separate,
-  quieter rolling issue labeled `dependency-monitor`.
+For best results, scan a lockfile. By defaule the action picks one automatically when
+your repo has it, and a lockfile pins what is actually installed, where a
+manifest only names a version range.
 
 ## Alerting
 
@@ -50,6 +50,14 @@ Alerts are delivered as GitHub Issues by default. When a scan finds
 something new — a malware verdict, a CVE, or a finding that got worse — the
 action opens a rolling issue for it, or comments on the one already open.
 When a finding goes away, that is reported as a comment on the same issue.
+
+Findings are split across two issues by severity:
+
+- **Malware and tampering** open a `🚨`-titled issue labeled
+  `dependency-malware`. Treat it as an incident: the package may already be
+  installed.
+- **Everything else** — vulnerabilities, secrets, licenses, hardening — goes
+  to a quieter issue labeled `dependency-monitor`.
 
 Each rolling issue is an append-only log: its body is the delta that opened
 it, and every later delta is a comment. Nothing is edited, so the thread is
