@@ -26,8 +26,10 @@ what the listing shows, so it is rewritten to read well there.
   Marketplace listing's own snippet uses.
 - The action's `name` in `action.yml`, which becomes the Marketplace listing
   title, is now "Dependency Monitor", matching the repository. It was
-  "Dependency malware & vulnerability monitor (rl-protect)"; the description
-  already says what is scanned and with what.
+  "Dependency malware & vulnerability monitor (rl-protect)".
+- The action's `description` is shortened to fit the Marketplace's
+  125-character limit. It still names ReversingLabs rl-protect, and drops
+  "for security issues" to make room.
 
 ## [4.0.0] - 2026-08-30
 
