@@ -28,7 +28,8 @@ what the listing shows, so it is rewritten to read well there.
   title, is now "Dependency Monitor", matching the repository. It was
   "Dependency malware & vulnerability monitor (rl-protect)".
 - The action's `description` is shortened to fit the Marketplace's
-  125-character limit, and no longer names rl-protect; the README does.
+  125-character limit. It still names ReversingLabs rl-protect, and drops
+  "for security issues" to make room.
 
 ## [4.0.0] - 2026-08-30
 
